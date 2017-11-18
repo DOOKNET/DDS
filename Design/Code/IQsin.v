@@ -1,49 +1,64 @@
 module IQsin(
-    input 	clk_50M,
+    input 	clk,
     input   rst_n,
-    output  signed  [12:0]  sin_500,
-	output  signed  [12:0]  sin_100
+    output  [13:0]  sin_10,
+	output  [13:0]  sin_30,
+	output  [13:0]  sin_50,
+	output  [13:0]  sin_70
 );
 //--------------------------------------------------------//
-parameter   Freq_I = 32'd42949673;      //frequence_I = 500k-50M
-parameter   Freq_Q = 32'd8589935;       //frequence_Q = 100k-50M-干扰
+parameter   Freq_1 = 32'd858993;      	//100M--10k
+parameter   Freq_2 = 32'd2576980;       //100M--30k
+parameter   Freq_3 = 32'd4294967;       //100M--50k
+parameter   Freq_4 = 32'd6012954;       //100M--70k
 parameter   cnt_width =  8'd32;    
 //--------------------------------------------------------//
 
 //--------------------------------------------------------//
-reg     [cnt_width-1:0]cnt_I = 0;
-reg     [cnt_width-1:0]cnt_Q = 0;
-wire    [9:0]   addr_I;
-wire	[9:0]	addr_Q;
-always @(posedge clk_50M or negedge rst_n) begin
+reg     [cnt_width-1:0]cnt_1 = 0;
+reg     [cnt_width-1:0]cnt_2 = 0;
+reg     [cnt_width-1:0]cnt_3 = 0;
+reg     [cnt_width-1:0]cnt_4 = 0;
+wire    [9:0]   addr_1;
+wire	[9:0]	addr_2;
+wire	[9:0]	addr_3;
+wire	[9:0]	addr_4;
+always @(posedge clk or negedge rst_n) begin
 	if(!rst_n)	begin
-		cnt_I <= 0;
-		cnt_Q <= 0;
+		cnt_1 <= 0;
+		cnt_2 <= 0;
+		cnt_3 <= 0;
+		cnt_4 <= 0;
 	end
 	else	begin
-	    cnt_I <= cnt_I + Freq_I;
-		cnt_Q <= cnt_Q + Freq_Q;
+	    cnt_1 <= cnt_1 + Freq_1;
+		cnt_2 <= cnt_2 + Freq_2;
+		cnt_3 <= cnt_3 + Freq_3;
+		cnt_4 <= cnt_4 + Freq_4;
 	end
 end
 
-assign  addr_I = cnt_I[cnt_width-1:cnt_width-10];
-assign  addr_Q = cnt_Q[cnt_width-1:cnt_width-10];
+assign  addr_1 = cnt_1[cnt_width-1:cnt_width-10];
+assign  addr_2 = cnt_2[cnt_width-1:cnt_width-10] + 9'd256;
+assign  addr_3 = cnt_3[cnt_width-1:cnt_width-10] + 9'd512;
+assign  addr_4 = cnt_4[cnt_width-1:cnt_width-10] + 9'd768;
 //--------------------------------------------------------//
 
 //--------------------调用两个双口ROM核--------------------//
-wire	signed	[11:0]	sin_100_r;
-wire	signed	[11:0]	sin_500_r;
-
-ROM_50_100      ROM_50_100_inst0(
-	.address_a  (addr_I),           //500k
-	.address_b  (addr_Q),           //100k
-	.clock      (clk_50M),
-	.q_a        (sin_500_r),            //sin_500k
-	.q_b        (sin_100_r)            //sin_100k
+ROM_1			ROM_1_inst0 (
+	.address_a 	( addr_1 ),
+	.address_b 	( addr_2 ),
+	.clock 		( clk ),
+	.q_a 		( sin_10 ),
+	.q_b 		( sin_30 )
 );
 
-assign	sin_100 = {sin_100_r[11],sin_100_r};
-assign	sin_500 = {sin_500_r[11],sin_500_r};
-
+ROM_1			ROM_1_inst1 (
+	.address_a 	( addr_3 ),
+	.address_b 	( addr_4 ),
+	.clock 		( clk ),
+	.q_a 		( sin_50 ),
+	.q_b 		( sin_70 )
+);
 
 endmodule

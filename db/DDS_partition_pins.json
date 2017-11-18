@@ -1,0 +1,289 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sin_10[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_10[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_30[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_50[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sin_70[13]",
+					"strict" : false
+				},
+				{
+					"name" : "da_clk1",
+					"strict" : false
+				},
+				{
+					"name" : "da_clk2",
+					"strict" : false
+				},
+				{
+					"name" : "da_clk3",
+					"strict" : false
+				},
+				{
+					"name" : "da_clk4",
+					"strict" : false
+				},
+				{
+					"name" : "write_1",
+					"strict" : false
+				},
+				{
+					"name" : "write_2",
+					"strict" : false
+				},
+				{
+					"name" : "write_3",
+					"strict" : false
+				},
+				{
+					"name" : "write_4",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
