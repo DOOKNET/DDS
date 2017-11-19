@@ -1,6 +1,10 @@
 module IQsin(
     input 	clk,
     input   rst_n,
+	input	[9:0]	phase_1,
+	input	[9:0]	phase_2,
+	input	[9:0]	phase_3,
+	input	[9:0]	phase_4,
     output  [13:0]  sin_10,
 	output  [13:0]  sin_30,
 	output  [13:0]  sin_50,
@@ -38,10 +42,10 @@ always @(posedge clk or negedge rst_n) begin
 	end
 end
 
-assign  addr_1 = cnt_1[cnt_width-1:cnt_width-10];
-assign  addr_2 = cnt_2[cnt_width-1:cnt_width-10] + 9'd256;
-assign  addr_3 = cnt_3[cnt_width-1:cnt_width-10] + 9'd512;
-assign  addr_4 = cnt_4[cnt_width-1:cnt_width-10] + 9'd768;
+assign  addr_1 = cnt_1[cnt_width-1:cnt_width-10] + phase_1;
+assign  addr_2 = cnt_2[cnt_width-1:cnt_width-10] + phase_2;
+assign  addr_3 = cnt_3[cnt_width-1:cnt_width-10] + phase_3;
+assign  addr_4 = cnt_4[cnt_width-1:cnt_width-10] + phase_4;
 //--------------------------------------------------------//
 
 //--------------------调用两个双口ROM核--------------------//
@@ -60,5 +64,6 @@ ROM_1			ROM_1_inst1 (
 	.q_a 		( sin_50 ),
 	.q_b 		( sin_70 )
 );
+
 
 endmodule

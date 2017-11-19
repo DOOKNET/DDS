@@ -1,5 +1,5 @@
 Assembler report for DDS
-Sun Nov 19 04:28:00 2017
+Sun Nov 19 15:14:36 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Standard Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Nov 19 04:28:00 2017 ;
+; Assembler Status      ; Successful - Sun Nov 19 15:14:36 2017 ;
 ; Revision Name         ; DDS                                   ;
 ; Top-level Entity Name ; TOP                                   ;
 ; Family                ; Cyclone IV E                          ;
@@ -79,8 +79,8 @@ agreement for further details.
 ; Option         ; Setting                                                                          ;
 +----------------+----------------------------------------------------------------------------------+
 ; Device         ; EP4CE30F23C8                                                                     ;
-; JTAG usercode  ; 0x0038C4C9                                                                       ;
-; Checksum       ; 0x0038C4C9                                                                       ;
+; JTAG usercode  ; 0x003985CA                                                                       ;
+; Checksum       ; 0x003985CA                                                                       ;
 +----------------+----------------------------------------------------------------------------------+
 
 
@@ -90,14 +90,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Standard Edition
-    Info: Processing started: Sun Nov 19 04:27:56 2017
+    Info: Processing started: Sun Nov 19 15:14:32 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DDS -c DDS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 574 megabytes
-    Info: Processing ended: Sun Nov 19 04:28:00 2017
+    Info: Peak virtual memory: 571 megabytes
+    Info: Processing ended: Sun Nov 19 15:14:36 2017
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
