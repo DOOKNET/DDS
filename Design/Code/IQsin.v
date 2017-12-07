@@ -5,7 +5,7 @@ module IQsin(
 	input	[9:0]	phase_2,
 	input	[9:0]	phase_3,
 	input	[9:0]	phase_4,
-    output  [13:0]  sin_10,
+    	output  [13:0]  sin_10,
 	output  [13:0]  sin_30,
 	output  [13:0]  sin_50,
 	output  [13:0]  sin_70
@@ -64,6 +64,5 @@ ROM_1			ROM_1_inst1 (
 	.q_a 		( sin_50 ),
 	.q_b 		( sin_70 )
 );
-
 
 endmodule
