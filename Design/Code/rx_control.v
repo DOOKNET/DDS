@@ -1,8 +1,8 @@
 module rx_control(
-    input 	CLK,
+    	input 	CLK,
 	input 	RSTn,
 	input 	RX_Done_Sig,
-	input 	[7:0]RX_Data,
+	input 	[7:0]	RX_Data,
 	output 	RX_En_Sig,
 	output 	reg	[9:0]	phase_1 = 0,
 	output 	reg	[9:0]	phase_2 = 0,
@@ -10,7 +10,7 @@ module rx_control(
 	output 	reg	[9:0]	phase_4 = 0
 );
 
-/******************************/
+/===============================/
 
 reg isEn;
 
@@ -24,7 +24,7 @@ always @ ( posedge CLK or negedge RSTn )
      if( !RSTn ) begin 
 			i_cnt<=0;
 		end
-	  else     
+	  else	begin     
 			case(i_cnt)
 				4'd0: begin i_cnt<=i_cnt+1;  isEn<=1'b1; end
 				4'd1:if((RX_Data == 8'h01)&&RX_Done_Sig) begin i_cnt<=i_cnt+1; end
@@ -45,12 +45,10 @@ always @ ( posedge CLK or negedge RSTn )
 				
 				4'd13:begin  i_cnt<=i_cnt+1; phase_1<=phase_1_r[9:0]; phase_2<=phase_2_r[9:0]; phase_3<=phase_3_r[9:0]; phase_4<= phase_4_r[9:0];  end
 				4'd14:begin isEn<=0; i_cnt<=0;  end
-				
 			endcase
-/*********************************/
-
+	  end
+/=================================/
 assign RX_En_Sig = isEn;
-
-/*********************************/
+/=================================/
 	
 endmodule
