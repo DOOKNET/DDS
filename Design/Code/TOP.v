@@ -15,7 +15,7 @@ module TOP(
 	output	write_3,
 	output	write_4
 );
-//--------------------//
+//-------定义信号------//
 assign	da_clk1 = clk;
 assign	da_clk2 = clk;
 assign	da_clk3 = clk;
@@ -34,7 +34,7 @@ wire	[9:0]	phase_1;
 wire	[9:0]	phase_2;
 wire	[9:0]	phase_3;
 wire	[9:0]	phase_4;
-//------------------------//
+//--------调用串口模块-------//
 uart_rx				uart_rx_inst0(
     .clk			(clk),
     .rst_n			(rst_n),
@@ -42,7 +42,7 @@ uart_rx				uart_rx_inst0(
     .rx_data		(rx_data),
     .rx_dong_sig	(rx_dong_sig)
 );
-//------------------------//
+//--------串口控制模块------//
 rx_control			rx_control_inst1(
     .CLK			(clk),
 	.RSTn			(rst_n),
@@ -54,7 +54,7 @@ rx_control			rx_control_inst1(
 	.phase_3		(phase_3),
 	.phase_4		(phase_4)
 );
-//------------------------//
+//--------调用DDS模块--------//
  IQsin			IQsin_inst2(
     .clk		(clk),
     .rst_n		(rst_n),
